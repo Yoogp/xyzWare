@@ -1,4 +1,6 @@
+getgenv().SecureMode = true
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+print(Rayfield) -- Check if Rayfield is correctly initialized
 
 local Window = Rayfield:CreateWindow({
    Name = "xyz.ware  |  MM2",
@@ -6,7 +8,7 @@ local Window = Rayfield:CreateWindow({
    LoadingSubtitle = "by wicked",
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = xyzWare, -- Create a custom folder for your hub/game
+      FolderName = "xyzWare", -- Corrected: Enclosed in double quotes
       FileName = "xyz ware"
    },
    Discord = {
@@ -25,6 +27,7 @@ local Window = Rayfield:CreateWindow({
       Key = {"newscriptmobile2023"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
+
 Rayfield:Notify({
    Title = "Warning",
    Content = "This script is in beta.",
@@ -34,12 +37,11 @@ Rayfield:Notify({
       Ignore = {
          Name = "Okay!",
          Callback = function()
-         print("The user tapped Okay!")
-      end
-   },
-},
+            print("The user tapped Okay!")
+         end
+      }
+   }
 })
-
 
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Main stuff")
@@ -47,7 +49,7 @@ local Section = Tab:CreateSection("Main stuff")
 local Button = Tab:CreateButton({
    Name = "murder/sheriff esp",
    Callback = function()
-    local MM2ESPGUI = Instance.new("ScreenGui")
+       local MM2ESPGUI = Instance.new("ScreenGui")
 local GUI = Instance.new("Frame")
 local NAME = Instance.new("TextLabel")
 local ESP = Instance.new("TextButton")
@@ -145,7 +147,14 @@ print("Working")
 })
 
 local Button = Tab:CreateButton({
-   Name = "xenny ware (mobile/pc)",
+   Name = "FreeHub",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/FreeeScripts/FREEHub/main/Loader", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "xennyy ware",
    Callback = function()
    repeat wait() until game.Players.LocalPlayer.Character
 url = "https://raw.githubusercontent.com/xennyy/Xenny-Ware/main/loader.lua"
@@ -153,120 +162,29 @@ loadstring(game:HttpGet(url))()
    end,
 })
 
-Rayfield:Notify({
-   Title = "Util",
-   Content = "script focused on: Murder Mystery 2.",
-   Duration = 3.1,
-   Image = 4483362458,
-   Actions = { -- Notification Buttons
-      Ignore = {
-         Name = "got it!",
-         Callback = function()
-         print("The user tapped Okay!")
-      end
-   },
-},
-})
-
-Rayfield:Notify({
-   Title = "Discord Server",
-   Content = "discord.gg/ygV7wP2jFD",
-   Duration = 6.5,
-   Image = 4483362458,
-   Actions = { -- Notification Buttons
-      Ignore = {
-         Name = "Okay!",
-         Callback = function()
-         print("The user tapped Okay!")
-      end
-   },
-},
-})
-
-
 local Button = Tab:CreateButton({
-   Name = "Soggyware (pc/mobile)",
+   Name = "soggy ware",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/soGGyware", true))()
    end,
-}]
-
-local Button = Tab:CreateButton({
-   Name = "FreeHub (mobile/pc)",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/FreeeScripts/FREEHub/main/Loader", true))()
-   end,
-}]
-
-local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
-local Section = Tab:CreateSection("Misc")
-
-local Button = Tab:CreateButton({
-   Name = "Fly",
-   Callback = function()
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
-   end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "BetterRoblox",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/betterrobloxui/main/betterroblox", true))()
-   end,
-}]
-
-local Button = Tab:CreateButton({
-   Name = "rizz script",
-   Callback = function()
-   loadstring(game:HttpGet('https://pastebin.com/raw/Wqxzdi1q'))()
-   end,
-}]
-
-local Button = Tab:CreateButton({
-   Name = "Chat spammer",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/chatspammer/main/chatspammer", true))()
-   end,
-}]
-
-local Button = Tab:CreateButton({
-   Name = "Fps booster",
-   Callback = function()
-   _G.Settings = {
-    Players = {
-        ["Ignore Me"] = true, -- Ignore your Character
-        ["Ignore Others"] = true -- Ignore other Characters
-    },
-    Meshes = {
-        Destroy = false, -- Destroy Meshes
-        LowDetail = false -- Low detail meshes (NOT SURE IT DOES ANYTHING)
-    },
-    Images = {
-        Invisible = true, -- Invisible Images
-        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
-        Destroy = false, -- Destroy Images
-    },
-    Other = {
-        ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
-        ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
-        ["No Explosions"] = true, -- Makes Explosion's invisible
-        ["No Clothes"] = true, -- Removes Clothing from the game
-        ["Low Water Graphics"] = true, -- Removes Water Quality
-        ["No Shadows"] = false, -- Remove Shadows
-        ["Low Rendering"] = true, -- Lower Rendering
-        ["Low Quality Parts"] = true -- Lower quality parts
-    }
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua%22))()
-   end,
-}]
+local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Other stuff")
 
 local Button = Tab:CreateButton({
    Name = "shaders",
    Callback = function()
    loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
    end,
-}]
+})
+
+local Button = Tab:CreateButton({
+   Name = "Destroy Xyz.ware",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
 
 
 Rayfield:LoadConfiguration()
